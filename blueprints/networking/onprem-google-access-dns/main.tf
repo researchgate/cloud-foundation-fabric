@@ -313,6 +313,7 @@ module "vm-onprem" {
     user-data = module.config-onprem.cloud_config
   }
   network_interfaces = [{
+    nat = true
     network    = module.vpc.name
     subnetwork = module.vpc.subnet_self_links["${var.region.gcp1}/subnet1"]
   }]
